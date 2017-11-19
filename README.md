@@ -1,2 +1,2 @@
 # vue-demo
-一个练习
+一个veu+boot的项目
