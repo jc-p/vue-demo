@@ -1,2 +1,3 @@
-# vue-demo
-一个veu+boot的项目
+# vue+vuex
+一个veu-app
+
