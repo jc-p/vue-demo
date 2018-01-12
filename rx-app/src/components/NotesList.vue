@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div >
     <h1>{{ msg }}</h1>
    
   </div>
@@ -10,7 +10,7 @@ export default {
  
   data () {
     return {
-      msg: 'Welcome to rx App'
+      msg: '笔记列表'
     }
   }
 }

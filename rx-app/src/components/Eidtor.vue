@@ -1,7 +1,7 @@
 <template>
-  <div >
+  <div class="hello">
     <h1>{{ msg }}</h1>
-   
+    
   </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
  
   data () {
     return {
-      msg: '这是推荐页面'
+      msg: '笔记内容'
     }
   }
 }
