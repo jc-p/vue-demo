@@ -1,34 +1,40 @@
-function makeAction(type) {
-    return ({ dispatch }, ...args) => dispatch(type, ...args)
+import {
+    NEW_NOTE,
+    TOGGLE_FAVORITE,
+    DELETE_NOTE,
+    TOGGLE_LIST_SHOW,
+    UPDATE_NOTE,
+    SET_CURRENT_ACTIVE_NOTE
+} from './mutations-types';
+
+export default {
+    // 新增一篇文章
+    newNote({ commit }) {
+        commit(NEW_NOTE);
+    },
+
+    // 切换当前激活文章的 favorite 状态
+    toggleFavorite({ commit }) {
+        commit(TOGGLE_FAVORITE);
+    },
+
+    // 删除当前激活文章
+    deleteNote({ commit }) {
+        commit(DELETE_NOTE);
+    },
+
+    // 切换收藏文章列表
+    toggleListShow({ commit }, data = { show: 'all' }) {
+        commit(TOGGLE_LIST_SHOW, data);
+    },
+
+    // 文章编辑更新
+    updateNote({ commit }, data = { note: {} }) {
+        commit(UPDATE_NOTE, data);
+    },
+
+    // 点击文章标题，实时更新编辑文章内容
+    setActiveNote({ commit }, data = { note: {} }) {
+        commit(SET_CURRENT_ACTIVE_NOTE, data);
+    }
 }
-
-const initNote = {
-    id: +new Date(),
-    title: 'My NOTE',
-    content: 'first note content',
-    favorite: false,
-};
-//模拟初始化数据
-const initData = {
-    show: 'all',
-    notes: [initNote],
-    activeNote: initNote
-}
-
-export const initStore = ({ dispatch }) => {
-    dispatch('INIT_STORE', initData);
-
-}
-
-//更新当前activeNote对象
-export const updataActiveNote = makeACtion('SET_ACTIVE_NOTE');
-
-//添加一个note对象
-export const addNote = makeAction('ADD_NOTE');
-
-//删除一个note对象
-export const deleteNote = makeAction('DELETE_NOTE');
-//删除一个note对象
-export const toggleFavorite = makeAction('');
-//删除一个note对象
-export const editNote = makeAction('EDIT_NOTE');
